@@ -1,11 +1,11 @@
-@extends('admin.layouts.app')
+@extends('shipper.layouts.app')
 
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Dashboard Admin</div>
+                    <div class="card-header">Dashboard Shipper</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -14,7 +14,7 @@
                             </div>
                         @endif
 
-                        Bạn đã đăng nhập Admin thành công!
+                        Bạn đã đăng nhập Shipper thành công!
                     </div>
                 </div>
             </div>

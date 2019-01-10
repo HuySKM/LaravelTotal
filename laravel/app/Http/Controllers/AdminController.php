@@ -7,13 +7,18 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    /**
+     * Hàm khởi tạo của Class được chạy ngay khi khởi tạo đối tượng
+     * Hàm này nó luôn được chạy trước các hàm khác trong Class
+     * AdminController Constructor
+     */
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware('auth:admin')->only('index');
     }
 
     /**
-     * Phương thức trả về view khi đăng nhập thành công
+     * Phương thức trả về view khi Admin đăng nhập thành công
      */
     public function index()
     {
@@ -43,7 +48,7 @@ class AdminController extends Controller
         $adminModel = new AdminModel();
         $adminModel->name = $request->name;
         $adminModel->email = $request->email;
-        $adminModel->password = brcypt($request->password);
+        $adminModel->password = bcrypt($request->password);
         $adminModel->save();
 
         return redirect()->route('admin.auth.login');

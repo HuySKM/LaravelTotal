@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -38,17 +39,15 @@ class LoginController extends Controller
 
         // Đăng nhập
         if (Auth::guard('admin')->attempt(
-        [
-            'email' =>$request->email,
-            'password' => $request->password,
-            $request->remember
-        ]
-
+        ['email' => $request->email,'password' => $request->password],$request->remember
         ))
-        // Nếu đăng nhập thành công thì chuyển hướng về view dashboard của admin
+
         {
+            // Nếu đăng nhập thành công thì chuyển hướng về view dashboard của admin
             return redirect()->intended(route('admin.dashboard'));
         }
+        // Nếu đăng nhập thất bại thì quay trở về form đăng nhập với giá trị 2 ô input email & remember
+        return redirect()->back()->withInput($request->only('email', 'remember'));
 
     }
 
@@ -57,6 +56,8 @@ class LoginController extends Controller
      */
     public function logout()
     {
-
+        Auth::guard('admin')->logout();
+        // Chuyển hướng về trang login của admin
+        return redirect()->route('admin.auth.login');
     }
 }
