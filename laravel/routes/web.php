@@ -19,9 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-/**
- * Route cho Administrator
- */
+    /**
+     * ---------------------------------------------------------------------
+     * ------------------- ROUTE ADMINISTRATOR AUTHENCATION ----------------
+     * ---------------------------------------------------------------------
+     */
 Route::get('admin','AdminController@index')->name('admin.dashboard');
 
 
@@ -73,6 +75,171 @@ Route::prefix('admin')->group(function ()
      */
 
     Route::post('logout','Auth\Admin\LoginController@logout')->name('admin.auth.logout');
+
+    /**
+    * ---------------------------------------------------------------------
+    * ------------------- ROUTE ADMIN SHOPPING ----------------------------
+    * ---------------------------------------------------------------------
+    */
+
+    Route::get('shop/category', function ()
+    {
+        return view('admin.content.shop.category.index');
+    });
+
+    Route::get('shop/product', function ()
+    {
+        return view('admin.content.shop.product.index');
+    });
+
+    Route::get('shop/customer', function ()
+    {
+        return view('admin.content.shop.customer.index');
+    });
+
+    Route::get('shop/order', function ()
+    {
+        return view('admin.content.shop.order.index');
+    });
+
+    Route::get('shop/review', function ()
+    {
+        return view('admin.content.shop.review.index');
+    });
+
+    Route::get('shop/brand', function ()
+    {
+        return view('admin.content.shop.brand.index');
+    });
+
+    Route::get('shop/statistic', function ()
+    {
+        return view('admin.content.shop.statistic.index');
+    });
+
+    Route::get('shop/product/order', function ()
+    {
+        return view('admin.content.shop.product-order.index');
+    });
+    /**
+    * ---------------------------------------------------------------------
+    * ------------------- ROUTE ADMIN CONTENT -----------------------------
+    * ---------------------------------------------------------------------
+    */
+    Route::get('content/category', function ()
+    {
+        return view('admin.content.content.category.index');
+    });
+
+    Route::get('content/post', function ()
+    {
+        return view('admin.content.content.post.index');
+    });
+
+    Route::get('content/page', function ()
+    {
+        return view('admin.content.content.page.index');
+    });
+
+    Route::get('content/tag', function ()
+    {
+        return view('admin.content.content.tag.index');
+    });
+
+    /**
+    * ---------------------------------------------------------------------
+    * ------------------- ROUTE ADMIN MENU --------------------------------
+    * ---------------------------------------------------------------------
+    */
+    Route::get('menu', function ()
+    {
+        return view('admin.content.menu.index');
+    });
+
+    Route::get('menuitems', function ()
+    {
+        return view('admin.content.menuitems.index');
+    });
+
+    /**
+    * ---------------------------------------------------------------------
+    * ------------------- ROUTE ADMIN USERS -------------------------------
+    * ---------------------------------------------------------------------
+    */
+    Route::get('users', function ()
+    {
+        return view('admin.content.users.index');
+    });
+
+    /**
+    * ---------------------------------------------------------------------
+    * ------------------- ROUTE ADMIN MEDIA -------------------------------
+    * ---------------------------------------------------------------------
+    */
+    Route::get('media', function ()
+    {
+        return view('admin.content.media.index');
+    });
+
+    /**
+     * ---------------------------------------------------------------------
+     * ------------------- ROUTE ADMIN SETTINGS ----------------------------
+     * ---------------------------------------------------------------------
+     */
+    Route::get('config', function ()
+    {
+        return view('admin.content.config.index');
+    });
+
+    /**
+     * ---------------------------------------------------------------------
+     * ------------------- ROUTE ADMIN NEWSLETTER ----------------------------
+     * ---------------------------------------------------------------------
+     */
+    Route::get('newsletter', function ()
+    {
+        return view('admin.content.newsletter.index');
+    });
+
+    /**
+     * ---------------------------------------------------------------------
+     * ------------------- ROUTE ADMIN BANNERS ----------------------------
+     * ---------------------------------------------------------------------
+     */
+    Route::get('banners', function ()
+    {
+        return view('admin.content.banner.index');
+    });
+
+    /**
+     * ---------------------------------------------------------------------
+     * ------------------- ROUTE ADMIN CONTACTS ----------------------------
+     * ---------------------------------------------------------------------
+     */
+    Route::get('contacts', function ()
+    {
+        return view('admin.content.contacts.index');
+    });
+
+    /**
+     * ---------------------------------------------------------------------
+     * ------------------- ROUTE ADMIN EMAIL ----------------------------
+     * ---------------------------------------------------------------------
+     */
+    Route::get('email/inbox', function ()
+    {
+        return view('admin.content.email.inbox');
+    });
+
+    Route::get('email/draft', function ()
+    {
+        return view('admin.content.email.draft');
+    });
+
+    Route::get('email/send', function ()
+    {
+        return view('admin.content.email.send');
+    });
 
 });
 
