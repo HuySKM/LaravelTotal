@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.homepages.index');
 });
 
 Auth::routes();
@@ -82,15 +82,29 @@ Route::prefix('admin')->group(function ()
     * ---------------------------------------------------------------------
     */
 
-    Route::get('shop/category', function ()
-    {
-        return view('admin.content.shop.category.index');
-    });
+    Route::get('shop/category', 'Admin\ShopCategoryController@index');
+    Route::get('shop/category/create', 'Admin\ShopCategoryController@create');
+    Route::get('shop/category/{id}/edit', 'Admin\ShopCategoryController@edit');
+    Route::get('shop/category/{id}/delete', 'Admin\ShopCategoryController@delete');
 
-    Route::get('shop/product', function ()
-    {
-        return view('admin.content.shop.product.index');
-    });
+    Route::post('shop/category', 'Admin\ShopCategoryController@store');
+    Route::post('shop/category/{id}', 'Admin\ShopCategoryController@update');
+    Route::post('shop/category/{id}/delete', 'Admin\ShopCategoryController@destroy');
+
+    /**
+     * ---------------------------------------------------------------------
+     * ------------------- ROUTE ADMIN SHOPPING PRODUCTS -------------------
+     * ---------------------------------------------------------------------
+     */
+
+    Route::get('shop/product', 'Admin\ShopProductController@index');
+    Route::get('shop/product/create', 'Admin\ShopProductController@create');
+    Route::get('shop/product/{id}/edit', 'Admin\ShopProductController@edit');
+    Route::get('shop/product/{id}/delete', 'Admin\ShopProductController@delete');
+
+    Route::post('shop/product', 'Admin\ShopProductController@store');
+    Route::post('shop/product/{id}', 'Admin\ShopProductController@update');
+    Route::post('shop/product/{id}/delete', 'Admin\ShopProductController@destroy');
 
     Route::get('shop/customer', function ()
     {
