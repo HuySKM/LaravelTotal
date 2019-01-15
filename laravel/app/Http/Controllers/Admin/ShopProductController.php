@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Admin\ShopCategoryModel;
 use App\Model\Admin\ShopProductModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -25,6 +26,8 @@ class ShopProductController extends Controller
     public function create()
     {
         $data = array();
+        $cats = ShopCategoryModel::all();
+        $data['cats'] = $cats;
         return view('admin.content.shop.product.create', $data);
 
     }
@@ -34,6 +37,8 @@ class ShopProductController extends Controller
         $data = array();
         $item = ShopProductModel::find($id);
         $data['products'] = $item;
+        $cats = ShopCategoryModel::all();
+        $data['cats'] = $cats;
         return view('admin.content.shop.product.edit', $data);
 
     }

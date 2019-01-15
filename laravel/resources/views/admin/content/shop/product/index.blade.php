@@ -15,6 +15,7 @@
                 <tr>
                     <th>#</th>
                     <th>Name</th>
+                    <th>Category</th>
                     <th>Images</th>
                     <th>Price</th>
                     <th>Sale</th>
@@ -27,14 +28,14 @@
                     <tr>
                         <th scope="row">{{$product->id}}</th>
                         <td>{{$product->name}}</td>
+                        <td>{{$product->cat_id}}</td>
                         <td>{{$product->images}}</td>
                         <td>{{$product->priceCore}}</td>
                         <td>{{$product->priceSale}}</td>
                         <td>{{$product->stock}}</td>
-                        <td>{{$product->cat_id}}</td>
                         <td>
-                            <a href="{{ url('admin/shop/category/'. $product->id.'/edit') }}" class="btn btn-warning">Edit</a>
-                            <a href="{{ url('admin/shop/category/'. $product->id.'/delete') }}" class="btn btn-danger">Delete</a>
+                            <a href="{{ url('admin/shop/product/'. $product->id.'/edit') }}" class="btn btn-warning">Edit</a>
+                            <a href="{{ url('admin/shop/product/'. $product->id.'/delete') }}" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 @endforeach
