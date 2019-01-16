@@ -34,6 +34,7 @@
                         <td>{{$product->priceSale}}</td>
                         <td>{{$product->stock}}</td>
                         <td>
+                            <a href="{{ url('admin/shop/product/create') }}" class="btn btn-success">Add</a>
                             <a href="{{ url('admin/shop/product/'. $product->id.'/edit') }}" class="btn btn-warning">Edit</a>
                             <a href="{{ url('admin/shop/product/'. $product->id.'/delete') }}" class="btn btn-danger">Delete</a>
                         </td>

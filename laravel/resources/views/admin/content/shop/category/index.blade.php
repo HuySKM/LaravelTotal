@@ -28,6 +28,7 @@
                     <td>{{$cat->slug}}</td>
                     <td>{{$cat->images}}</td>
                     <td>
+                        <a href="{{ url('admin/shop/category/create') }}" class="btn btn-success">Add</a>
                         <a href="{{ url('admin/shop/category/'. $cat->id.'/edit') }}" class="btn btn-warning">Edit</a>
                         <a href="{{ url('admin/shop/category/'. $cat->id.'/delete') }}" class="btn btn-danger">Delete</a>
                     </td>

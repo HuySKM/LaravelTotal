@@ -16,21 +16,21 @@
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="treeview">
                         <a href="{{url('/admin/')}}">
-                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            <i class="fa fa-power-off"></i> <span>Dashboard</span>
                         </a>
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-laptop"></i>
+                            <i class="fa fa-shopping-cart"></i>
                             <span>Shop</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="{{ url('/admin/shop/category') }}"><i class="fa fa-angle-right"></i> Danh mục</a></li>
-                            <li><a href="{{ url('/admin/shop/product') }}"><i class="fa fa-angle-right"></i> Sản phẩm</a></li>
+                            <li><a href="{{ url('/admin/shop/product') }}"><i class="fa fa-product-hunt"></i></i> Sản phẩm</a></li>
                             <li><a href="{{ url('/admin/shop/customer') }}"><i class="fa fa-angle-right"></i> Khách hàng</a></li>
                             <li><a href="{{ url('/admin/shop/order') }}"><i class="fa fa-angle-right"></i> Đơn hàng</a></li>
-                            <li><a href="{{ url('/admin/shop/review') }}"><i class="fa fa-angle-right"></i> Đánh giá</a></li>
+                            <li><a href="{{ url('/admin/shop/review') }}"><i class="fa fa-star"></i> Đánh giá</a></li>
                             <li><a href="{{ url('/admin/shop/brand') }}"><i class="fa fa-angle-right"></i> Nhãn hiệu</a></li>
                             <li><a href="{{ url('/admin/shop/statistic') }}"><i class="fa fa-angle-right"></i> Thống kê</a></li>
 
@@ -38,18 +38,18 @@
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-laptop"></i>
+                            <i class="fa fa-cc-visa"></i>
                             <span>Order</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/shop/product/order') }}"><i class="fa fa-angle-right"></i> Đơn đặt hàng</a></li>
+                            <li><a href="{{ url('/admin/shop/product/order') }}"><i class="fa fa-star"></i> Đơn đặt hàng</a></li>
 
                         </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-laptop"></i>
+                            <i class="fa fa-book"></i>
                             <span>Content</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
@@ -63,7 +63,7 @@
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-laptop"></i>
+                            <i class="fa fa-bars"></i>
                             <span>Menu</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
@@ -74,67 +74,67 @@
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-laptop"></i>
+                            <i class="fa fa-user"></i>
                             <span>Admin</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/users') }}"><i class="fa fa-angle-right"></i> Quản trị viên</a></li>
+                            <li><a href="{{ url('/admin/users') }}"><i class="fa fa-user"></i> Quản trị viên</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-laptop"></i>
+                            <i class="fa fa-medium"></i>
                             <span>Media</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/media') }}"><i class="fa fa-angle-right"></i> Media manager</a></li>
+                            <li><a href="{{ url('/admin/media') }}"><i class="fa fa-camera"></i> Media Manager</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-laptop"></i>
+                            <i class="fa fa-cogs"></i>
                             <span>Settings</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/config') }}"><i class="fa fa-angle-right"></i> Global settings</a></li>
+                            <li><a href="{{ url('/admin/config') }}"><i class="fa fa-cogs"></i> Global Settings</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-laptop"></i>
-                            <span>Newletters</span>
+                            <i class="fa fa-bell"></i>
+                            <span>Newsletter</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/newsletter') }}"><i class="fa fa-angle-right"></i> Newletters</a></li>
+                            <li><a href="{{ url('/admin/newsletter') }}"><i class="fa fa-bell"></i> Newsletter</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-laptop"></i>
+                            <i class="fa fa-tv"></i>
                             <span>Banners</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/banners') }}"><i class="fa fa-angle-right"></i> Banners</a></li>
+                            <li><a href="{{ url('/admin/banners') }}"><i class="fa fa-tv"></i> Banners</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-laptop"></i>
+                            <i class="fa fa-phone"></i>
                             <span>Contact</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/contacts') }}"><i class="fa fa-angle-right"></i> Contact</a></li>
+                            <li><a href="{{ url('/admin/contacts') }}"><i class="fa fa-phone"></i> Contacts</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-laptop"></i>
+                            <i class="fa fa-envelope"></i>
                             <span>Email</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>

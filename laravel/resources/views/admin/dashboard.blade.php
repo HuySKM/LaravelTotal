@@ -3,8 +3,6 @@
 Trang quản trị viên
 @endsection
 @section('content')
-
-
             <div class="col_3">
                 <div class="col-md-3 widget widget1">
                     <div class="r3_counter_box">

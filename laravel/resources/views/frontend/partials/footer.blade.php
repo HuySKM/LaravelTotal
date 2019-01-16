@@ -41,7 +41,7 @@
             </ul>
         </div>
         <div class="clearfix"></div>
-        <p class="copy-right">© 2016 Fashion Club . All rights reserved | Design by <a href="https://yenbai.city"> YenBai.City</a></p>
+        <p class="copy-right">© 2019 Yen Bai City . All rights reserved | Design by <a href="https://yenbai.city"> YenBai.City</a></p>
     </div>
 </div>
 <!-- cart-js -->

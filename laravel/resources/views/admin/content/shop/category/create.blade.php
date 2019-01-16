@@ -9,7 +9,7 @@
             <form name ="category" action="{{ url('admin/shop/category') }}" method="post" class="form-horizontal">
                 @csrf
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Tên danh mục</label>
+                    <label for="focusedinput" class="col-sm-2 control-label">Category</label>
                     <div class="col-sm-8">
                         <input type="text" name="name" class="form-control1" id="focusedinput" placeholder="Default Input">
                     </div>
@@ -27,11 +27,11 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="txtarea1" class="col-sm-2 control-label">Mô tả ngắn</label>
+                    <label for="txtarea1" class="col-sm-2 control-label">Intro</label>
                     <div class="col-sm-8"><textarea name="intro" id="txtarea1" cols="50" rows="4" class="form-control1"></textarea></div>
                 </div>
                 <div class="form-group">
-                    <label for="txtarea1" class="col-sm-2 control-label">Mô tả</label>
+                    <label for="txtarea1" class="col-sm-2 control-label">Description</label>
                     <div class="col-sm-8"><textarea name="desc" id="txtarea1" cols="50" rows="4" class="form-control1"></textarea></div>
                 </div>
                 <div class="col-sm-offset-2">

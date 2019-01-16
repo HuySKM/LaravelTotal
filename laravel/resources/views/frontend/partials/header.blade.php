@@ -1,12 +1,12 @@
 <div class="header-top-w3layouts">
     <div class="container">
         <div class="col-md-6 logo-w3">
-            <a href="index.html"><img src="{{asset('frontend_assets/images/logo2.png')}}" alt=" " /><h1>FASHION<span>CLUB</span></h1></a>
+            <a href="index.html"><img src="{{asset('frontend_assets/images/logo2.png')}}" alt=" " /><h1>YEN BAI<span>CITY</span></h1></a>
         </div>
         <div class="col-md-6 phone-w3l">
             <ul>
                 <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></li>
-                <li>+18045403380</li>
+                <li>0789.888.999</li>
             </ul>
         </div>
         <div class="clearfix"></div>
@@ -28,7 +28,7 @@
                     <ul class="nav navbar-nav ">
                         <li class=" active"><a href="index.html" class="hyper "><span>Home</span></a></li>
                         <li class="dropdown ">
-                            <a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Clothing<b class="caret"></b></span></a>
+                            <a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Điện thoại<b class="caret"></b></span></a>
                             <ul class="dropdown-menu multi">
                                 <div class="row">
                                     <div class="col-sm-4">
