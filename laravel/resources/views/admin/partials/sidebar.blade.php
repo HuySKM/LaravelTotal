@@ -9,14 +9,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <h1><a class="navbar-brand" href="{{url('/')}}"><span class="fa fa-area-chart"></span> Glance<span class="dashboard_text">Design dashboard</span></a></h1>
+                <h1><a class="navbar-brand" href="{{url('/')}}"><span class="fa fa-sun-o"></span> YENBAI.CITY<span class="dashboard_text">DESIGN DASHBOARD</span></a></h1>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="sidebar-menu">
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="treeview">
                         <a href="{{url('/admin/')}}">
-                            <i class="fa fa-power-off"></i> <span>Dashboard</span>
+                            <i class="fa fa-home"></i> <span>Dashboard</span>
                         </a>
                     </li>
                     <li class="treeview">
@@ -26,13 +26,13 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/shop/category') }}"><i class="fa fa-angle-right"></i> Danh mục</a></li>
+                            <li><a href="{{ url('/admin/shop/category') }}"><i class="fa fa-paper-plane"></i> Danh mục</a></li>
                             <li><a href="{{ url('/admin/shop/product') }}"><i class="fa fa-product-hunt"></i></i> Sản phẩm</a></li>
-                            <li><a href="{{ url('/admin/shop/customer') }}"><i class="fa fa-angle-right"></i> Khách hàng</a></li>
-                            <li><a href="{{ url('/admin/shop/order') }}"><i class="fa fa-angle-right"></i> Đơn hàng</a></li>
+                            <li><a href="{{ url('/admin/shop/customer') }}"><i class="fa fa-user"></i> Khách hàng</a></li>
+                            <li><a href="{{ url('/admin/shop/order') }}"><i class="fa fa-cart-arrow-down"></i> Đơn hàng</a></li>
                             <li><a href="{{ url('/admin/shop/review') }}"><i class="fa fa-star"></i> Đánh giá</a></li>
-                            <li><a href="{{ url('/admin/shop/brand') }}"><i class="fa fa-angle-right"></i> Nhãn hiệu</a></li>
-                            <li><a href="{{ url('/admin/shop/statistic') }}"><i class="fa fa-angle-right"></i> Thống kê</a></li>
+                            <li><a href="{{ url('/admin/shop/brand') }}"><i class="fa fa-thumbs-up"></i> Nhãn hiệu</a></li>
+                            <li><a href="{{ url('/admin/shop/statistic') }}"><i class="fa fa-signal"></i> Thống kê</a></li>
 
                         </ul>
                     </li>
@@ -43,21 +43,21 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/shop/product/order') }}"><i class="fa fa-star"></i> Đơn đặt hàng</a></li>
+                            <li><a href="{{ url('/admin/shop/product/order') }}"><i class="fa fa-gift"></i> Đơn đặt hàng</a></li>
 
                         </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-book"></i>
+                            <i class="fa fa-comment"></i>
                             <span>Content</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/content/category') }}"><i class="fa fa-angle-right"></i> Danh mục</a></li>
-                            <li><a href="{{ url('/admin/content/post') }}"><i class="fa fa-angle-right"></i> Bài viết</a></li>
-                            <li><a href="{{ url('/admin/content/page') }}"><i class="fa fa-angle-right"></i> Trang</a></li>
-                            <li><a href="{{ url('/admin/content/tag') }}"><i class="fa fa-angle-right"></i> Tag</a></li>
+                            <li><a href="{{ url('/admin/content/category') }}"><i class="fa fa-folder"></i> Danh mục</a></li>
+                            <li><a href="{{ url('/admin/content/post') }}"><i class="fa fa-pencil-square-o"></i> Bài viết</a></li>
+                            <li><a href="{{ url('/admin/content/page') }}"><i class="fa fa-bullhorn"></i> Trang</a></li>
+                            <li><a href="{{ url('/admin/content/tag') }}"><i class="fa fa-tags"></i> Tag</a></li>
 
                         </ul>
                     </li>
@@ -68,8 +68,8 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/menu') }}"><i class="fa fa-angle-right"></i> Menu</a></li>
-                            <li><a href="{{ url('/admin/menuitems') }}"><i class="fa fa-angle-right"></i> Menu items</a></li>
+                            <li><a href="{{ url('/admin/menu') }}"><i class="fa fa-ellipsis-v"></i> Menu</a></li>
+                            <li><a href="{{ url('/admin/menuitems') }}"><i class="fa fa-ellipsis-v"></i> Menu Items</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -139,9 +139,9 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/email/inbox') }}"><i class="fa fa-angle-right"></i> Inbox</a></li>
-                            <li><a href="{{ url('/admin/email/draft') }}"><i class="fa fa-angle-right"></i> Draft</a></li>
-                            <li><a href="{{ url('/admin/email/send') }}"><i class="fa fa-angle-right"></i> Send</a></li>
+                            <li><a href="{{ url('/admin/email/inbox') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
+                            <li><a href="{{ url('/admin/email/draft') }}"><i class="fa fa-folder-open"></i> Draft</a></li>
+                            <li><a href="{{ url('/admin/email/send') }}"><i class="fa fa-share-square"></i> Send</a></li>
                         </ul>
                     </li>
                 </ul>

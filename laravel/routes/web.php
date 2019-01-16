@@ -11,40 +11,43 @@
 |
 */
 
-Route::get('/', function () {
+    Route::get('/', function () {
     return view('frontend.homepages.index');
-});
+    });
 
-Auth::routes();
+    Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
 
     /**
      * ---------------------------------------------------------------------
      * ------------------- ROUTE ADMINISTRATOR AUTHENCATION ----------------
      * ---------------------------------------------------------------------
      */
-Route::get('admin','AdminController@index')->name('admin.dashboard');
+    Route::get('admin','AdminController@index')->name('admin.dashboard');
 
 
-Route::prefix('admin')->group(function ()
-{
+    Route::prefix('admin')->group(function ()
+    {
     /**
      * Gom nhóm các Route cho phần admin
      * URL : domain.com/admin/
      * Route mặc định của Admin
      */
+
     //Route::get('/')->name('admin.dashboard');
     /**
      * URL : domain.com/admin/dashboard
      * Route đăng nhập thành công
      */
+
     Route::get('/dashboard','AdminController@index')->name('admin.dashboard');
 
     /**
      * URL : domain.com/admin/register
      * Route trả về view dùng để đăng ký tài khoản admin
      */
+
     Route::get('register','AdminController@create')->name('admin.register');
 
     /**
@@ -52,6 +55,7 @@ Route::prefix('admin')->group(function ()
      * Phương thức là POST
      * Route dùng để đăng ký 1 admin từ form POST
      */
+
     Route::post('register','AdminController@store')->name('admin.register.store');
 
     /**
@@ -59,6 +63,7 @@ Route::prefix('admin')->group(function ()
      * METHOD : GET
      * Route trả về view đăng nhập admin
      */
+
     Route::get('login','Auth\Admin\LoginController@login')->name('admin.auth.login');
 
     /**
@@ -66,6 +71,7 @@ Route::prefix('admin')->group(function ()
      * METHOD : POST
      * Route xử lý quá trình đăng nhập admin
      */
+
     Route::post('login','Auth\Admin\LoginController@loginAdmin')->name('admin.auth.loginAdmin');
 
     /**
@@ -93,7 +99,7 @@ Route::prefix('admin')->group(function ()
 
     /**
      * ---------------------------------------------------------------------
-     * ------------------- ROUTE ADMIN SHOPPING PRODUCTS -------------------
+     * ------------------- ROUTE ADMIN SHOPPING PRODUCT --------------------
      * ---------------------------------------------------------------------
      */
 
@@ -106,40 +112,78 @@ Route::prefix('admin')->group(function ()
     Route::post('shop/product/{id}', 'Admin\ShopProductController@update');
     Route::post('shop/product/{id}/delete', 'Admin\ShopProductController@destroy');
 
+    /**
+    * ---------------------------------------------------------------------
+    * ------------------- ROUTE ADMIN SHOPPING CUSTOMER -------------------
+    * ---------------------------------------------------------------------
+    */
+
     Route::get('shop/customer', function ()
     {
         return view('admin.content.shop.customer.index');
     });
+
+    /**
+     * ---------------------------------------------------------------------
+     * ------------------- ROUTE ADMIN SHOPPING ORDER ----------------------
+     * ---------------------------------------------------------------------
+     */
 
     Route::get('shop/order', function ()
     {
         return view('admin.content.shop.order.index');
     });
 
+    /**
+    * ---------------------------------------------------------------------
+    * ------------------- ROUTE ADMIN SHOPPING REVIEW ---------------------
+    * ---------------------------------------------------------------------
+    */
+
     Route::get('shop/review', function ()
     {
         return view('admin.content.shop.review.index');
     });
+
+    /**
+    * ---------------------------------------------------------------------
+    * ------------------- ROUTE ADMIN SHOPPING BRAND ----------------------
+    * ---------------------------------------------------------------------
+    */
 
     Route::get('shop/brand', function ()
     {
         return view('admin.content.shop.brand.index');
     });
 
+    /**
+    * ---------------------------------------------------------------------
+    * ------------------- ROUTE ADMIN SHOPPING STATISTIC ------------------
+    * ---------------------------------------------------------------------
+    */
+
     Route::get('shop/statistic', function ()
     {
         return view('admin.content.shop.statistic.index');
     });
 
+    /**
+    * ---------------------------------------------------------------------
+    * ------------------- ROUTE ADMIN SHOPPING PRODUCT ORDER --------------
+    * ---------------------------------------------------------------------
+    */
+
     Route::get('shop/product/order', function ()
     {
         return view('admin.content.shop.product-order.index');
     });
+
     /**
     * ---------------------------------------------------------------------
     * ------------------- ROUTE ADMIN CONTENT -----------------------------
     * ---------------------------------------------------------------------
     */
+
     Route::get('content/category', function ()
     {
         return view('admin.content.content.category.index');
@@ -255,18 +299,18 @@ Route::prefix('admin')->group(function ()
         return view('admin.content.email.send');
     });
 
-});
+    });
 
-/**
- * Route cho Seller
- */
+    /**
+    * Route cho Seller
+    */
 
-Route::get('seller','SellerController@index');
+    Route::get('seller','SellerController@index');
     /**
      * Route cho nhà cung cấp sản phẩm (Seller)
      */
 
-Route::prefix('seller')->group(function ()
+    Route::prefix('seller')->group(function ()
 {
     /**
      * Gom nhóm các Route cho phần Seller
@@ -322,13 +366,13 @@ Route::prefix('seller')->group(function ()
  * Route cho Shipper
  */
 
-Route::get('shipper','ShipperController@index');
+    Route::get('shipper','ShipperController@index');
 /**
  * Route cho nhà vận chuyển sản phẩm (Shipper)
  */
 
-Route::prefix('shipper')->group(function ()
-{
+    Route::prefix('shipper')->group(function ()
+    {
     /**
      * Gom nhóm các Route cho phần Shipper
      * URL : domain.com/shipper/
