@@ -1,9 +1,9 @@
 @extends('admin.layouts.glance')
 @section('title')
-    Thêm mới danh mục
+    Thêm mới trang
 @endsection
 @section('content')
-    <h1>Thêm mới danh mục</h1>
+    <h1> Thêm mới trang</h1>
     <div class="row">
         <div class="form-three widget-shadow">
 
@@ -17,10 +17,11 @@
                 </div>
         @endif
         <!-- Create Post Form -->
-            <form name ="category" action="{{ url('admin/shop/category') }}" method="post" class="form-horizontal">
+
+            <form name ="post" action="{{ url('admin/content/page') }}" method="post" class="form-horizontal">
                 @csrf
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Category</label>
+                    <label for="focusedinput" class="col-sm-2 control-label">Page</label>
                     <div class="col-sm-8">
                         <input type="text" name="name" value="{{ old('name') }}" class="form-control1" id="focusedinput" placeholder="Default Input">
                     </div>

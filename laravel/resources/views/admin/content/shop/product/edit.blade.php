@@ -6,6 +6,18 @@
     <h1>Sửa sản phẩm {{ $products-> id . ' : ' . $products->name }}</h1>
     <div class="row">
         <div class="form-three widget-shadow">
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+        @endif
+        <!-- Create Post Form -->
+
             <form name ="product" action="{{ url('admin/shop/product/'. $products->id) }}" method="post" class="form-horizontal">
                 @csrf
                 <div class="form-group">

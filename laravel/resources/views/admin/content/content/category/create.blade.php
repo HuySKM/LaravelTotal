@@ -17,7 +17,7 @@
                 </div>
         @endif
         <!-- Create Post Form -->
-            <form name ="category" action="{{ url('admin/shop/category') }}" method="post" class="form-horizontal">
+            <form name ="category" action="{{ url('admin/content/category') }}" method="post" class="form-horizontal">
                 @csrf
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Category</label>

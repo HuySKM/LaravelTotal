@@ -4,96 +4,109 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\Admin\ShopCategoryModel;
+use App\Model\Admin\ContentTagModel;
 use Illuminate\Support\Facades\DB;
 
-class ShopCategoryController extends Controller
+class ContentTagController extends Controller
 {
-    public function index ()
+    public function index()
     {
-        $items = DB::table('shop_category')->paginate(10);
+        $items = DB::table('content_tags')->paginate(10);
         /**
          * Biến truyền từ Controller xuống View
          */
         $data = array();
-        $data['cats'] = $items;
+        $data['tags'] = $items;
 
-        return view('admin.content.shop.category.index', $data);
+        return view('admin.content.content.tag.index', $data);
+
     }
 
     public function create()
     {
         $data = array();
-        return view('admin.content.shop.category.create', $data);
+
+        return view('admin.content.content.tag.create', $data);
+
     }
 
     public function edit($id)
     {
         $data = array();
-        $item = ShopCategoryModel::find($id);
-        $data['cat'] = $item;
-        return view('admin.content.shop.category.edit', $data);
+        $item = ContentTagModel::find($id);
+        $data['tag'] = $item;
+
+        return view('admin.content.content.tag.edit', $data);
 
     }
 
     public function delete($id)
     {
         $data = array();
-        $item = ShopCategoryModel::find($id);
-        $data['cat'] = $item;
-        return view('admin.content.shop.category.delete', $data);
+        $item = ContentTagModel::find($id);
+        $data['tag'] = $item;
+        return view('admin.content.content.tag.delete', $data);
+
     }
+
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate
         ([
             'name' => 'required|max:255',
             'slug' => 'required',
+            'author_id' => 'required',
+            'view' => 'required',
             'images' => 'required',
             'intro' => 'required',
-            'desc' => 'required',
+
         ]);
 
         $input = $request->all();
-        $item = new ShopCategoryModel();
+        $item = new ContentTagModel();
         $item ->name = $input['name'];
         $item ->slug = $input['slug'];
+        $item ->author_id = isset($input['author_id']) ? $input['author_id'] : 0;
+        $item ->view = isset($input['view']) ? $input['view'] : 0;
         $item ->images = $input['images'];
         $item ->intro = $input['intro'];
-        $item ->desc = $input['desc'];
-        $item->save();
-        return redirect('admin/shop/category');
-    }
 
+
+        $item->save();
+        return redirect('admin/content/tag');
+    }
 
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate
         ([
             'name' => 'required|max:255',
             'slug' => 'required',
             'images' => 'required',
             'intro' => 'required',
-            'desc' => 'required',
+            'author_id' => 'required',
+            'view' => 'required',
         ]);
 
         $input = $request->all();
-        $item = ShopCategoryModel::find($id);
+        $item = ContentTagModel::find($id);
         $item ->name = $input['name'];
         $item ->slug = $input['slug'];
+        $item ->author_id = isset($input['author_id']) ? $input['author_id'] : 0;
+        $item ->view = isset($input['view']) ? $input['view'] : 0;
         $item ->images = $input['images'];
         $item ->intro = $input['intro'];
-        $item ->desc = $input['desc'];
+
         $item->save();
-        return redirect('admin/shop/category');
+        return redirect('admin/content/tag');
+
     }
 
     public function destroy($id)
     {
-        $item = ShopCategoryModel::find($id);
+        $item = ContentTagModel::find($id);
         $item->delete();
 
-        return redirect('admin/shop/category');
+        return redirect('admin/content/tag');
+
     }
 }

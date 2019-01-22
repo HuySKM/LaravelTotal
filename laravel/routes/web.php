@@ -15,7 +15,10 @@
     return view('frontend.homepages.index');
     });
 
-    Auth::routes();
+    Auth::routes(['verify' => true]);
+    Route::get('profile', function () {
+    // Only verified users may enter...
+    })->middleware('verified');
 
     Route::get('/home', 'HomeController@index')->name('home');
 
@@ -184,40 +187,90 @@
     * ---------------------------------------------------------------------
     */
 
-    Route::get('content/category', function ()
-    {
-        return view('admin.content.content.category.index');
-    });
+    Route::get('content/category', 'Admin\ContentCategoryController@index');
+    Route::get('content/category/create', 'Admin\ContentCategoryController@create');
+    Route::get('content/category/{id}/edit', 'Admin\ContentCategoryController@edit');
+    Route::get('content/category/{id}/delete', 'Admin\ContentCategoryController@delete');
 
-    Route::get('content/post', function ()
-    {
-        return view('admin.content.content.post.index');
-    });
+    Route::post('content/category', 'Admin\ContentCategoryController@store');
+    Route::post('content/category/{id}', 'Admin\ContentCategoryController@update');
+    Route::post('content/category/{id}/delete', 'Admin\ContentCategoryController@destroy');
 
-    Route::get('content/page', function ()
-    {
-        return view('admin.content.content.page.index');
-    });
+    /**
+    * ---------------------------------------------------------------------
+    * ------------------- ROUTE ADMIN CONTENT POST ------------------------
+    * ---------------------------------------------------------------------
+    */
 
-    Route::get('content/tag', function ()
-    {
-        return view('admin.content.content.tag.index');
-    });
+    Route::get('content/post', 'Admin\ContentPostController@index');
+    Route::get('content/post/create', 'Admin\ContentPostController@create');
+    Route::get('content/post/{id}/edit', 'Admin\ContentPostController@edit');
+    Route::get('content/post/{id}/delete', 'Admin\ContentPostController@delete');
+
+    Route::post('content/post', 'Admin\ContentPostController@store');
+    Route::post('content/post/{id}', 'Admin\ContentPostController@update');
+    Route::post('content/post/{id}/delete', 'Admin\ContentPostController@destroy');
+
+    /**
+    * ---------------------------------------------------------------------
+    * ------------------- ROUTE ADMIN CONTENT PAGE ------------------------
+    * ---------------------------------------------------------------------
+    */
+
+    Route::get('content/page', 'Admin\ContentPageController@index');
+    Route::get('content/page/create', 'Admin\ContentPageController@create');
+    Route::get('content/page/{id}/edit', 'Admin\ContentPageController@edit');
+    Route::get('content/page/{id}/delete', 'Admin\ContentPageController@delete');
+
+    Route::post('content/page', 'Admin\ContentPageController@store');
+    Route::post('content/page/{id}', 'Admin\ContentPageController@update');
+    Route::post('content/page/{id}/delete', 'Admin\ContentPageController@destroy');
+
+    /**
+    * ---------------------------------------------------------------------
+    * ------------------- ROUTE ADMIN CONTENT TAG -------------------------
+    * ---------------------------------------------------------------------
+    */
+
+    Route::get('content/tag', 'Admin\ContentTagController@index');
+    Route::get('content/tag/create', 'Admin\ContentTagController@create');
+    Route::get('content/tag/{id}/edit', 'Admin\ContentTagController@edit');
+    Route::get('content/tag/{id}/delete', 'Admin\ContentTagController@delete');
+
+    Route::post('content/tag', 'Admin\ContentTagController@store');
+    Route::post('content/tag/{id}', 'Admin\ContentTagController@update');
+    Route::post('content/tag/{id}/delete', 'Admin\ContentTagController@destroy');
 
     /**
     * ---------------------------------------------------------------------
     * ------------------- ROUTE ADMIN MENU --------------------------------
     * ---------------------------------------------------------------------
     */
-    Route::get('menu', function ()
-    {
-        return view('admin.content.menu.index');
-    });
 
-    Route::get('menuitems', function ()
-    {
-        return view('admin.content.menuitems.index');
-    });
+    Route::get('menu', 'Admin\MenuController@index');
+    Route::get('menu/create', 'Admin\MenuController@create');
+    Route::get('menu/{id}/edit', 'Admin\MenuController@edit');
+    Route::get('menu/{id}/delete', 'Admin\MenuController@delete');
+
+    Route::post('menu', 'Admin\MenuController@store');
+    Route::post('menu/{id}', 'Admin\MenuController@update');
+    Route::post('menu/{id}/delete', 'Admin\MenuController@destroy');
+
+    /**
+    * ---------------------------------------------------------------------
+    * ------------------- ROUTE ADMIN MENU - ITEMS ------------------------
+    * ---------------------------------------------------------------------
+    */
+
+
+    Route::get('menuitems', 'Admin\MenuItemsController@index');
+    Route::get('menuitems/create', 'Admin\MenuItemsController@create');
+    Route::get('menuitems/{id}/edit', 'Admin\MenuItemsController@edit');
+    Route::get('menuitems/{id}/delete', 'Admin\MenuItemsController@delete');
+
+    Route::post('menuitems', 'Admin\MenuItemsController@store');
+    Route::post('menuitems/{id}', 'Admin\MenuItemsController@update');
+    Route::post('menuitems/{id}/delete', 'Admin\MenuItemsController@destroy');
 
     /**
     * ---------------------------------------------------------------------

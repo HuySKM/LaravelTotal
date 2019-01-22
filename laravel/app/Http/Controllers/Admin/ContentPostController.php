@@ -2,53 +2,55 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Model\Admin\ShopCategoryModel;
-use App\Model\Admin\ShopProductModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Admin\ContentPostModel;
+use App\Model\Admin\ContentCategoryModel;
 use Illuminate\Support\Facades\DB;
 
-class ShopProductController extends Controller
+
+class ContentPostController extends Controller
 {
     public function index()
     {
-        $items = DB::table('shop_products')->paginate(10);
+        $items = DB::table('content_posts')->paginate(10);
         /**
          * Biến truyền từ Controller xuống View
          */
         $data = array();
-        $data['products'] = $items;
+        $data['posts'] = $items;
 
-        return view('admin.content.shop.product.index', $data);
+        return view('admin.content.content.post.index', $data);
 
     }
 
     public function create()
     {
         $data = array();
-        $cats = ShopCategoryModel::all();
+        $cats = ContentPostModel::all();
         $data['cats'] = $cats;
-        return view('admin.content.shop.product.create', $data);
+        return view('admin.content.content.post.create', $data);
 
     }
 
     public function edit($id)
     {
         $data = array();
-        $item = ShopProductModel::find($id);
-        $data['products'] = $item;
-        $cats = ShopCategoryModel::all();
+        $item = ContentPostModel::find($id);
+        $data['post'] = $item;
+
+        $cats = ContentCategoryModel::all();
         $data['cats'] = $cats;
-        return view('admin.content.shop.product.edit', $data);
+        return view('admin.content.content.post.edit', $data);
 
     }
 
     public function delete($id)
     {
         $data = array();
-        $item = ShopProductModel::find($id);
-        $data['products'] = $item;
-        return view('admin.content.shop.product.delete', $data);
+        $item = ContentPostModel::find($id);
+        $data['post'] = $item;
+        return view('admin.content.content.post.delete', $data);
 
     }
 
@@ -58,28 +60,27 @@ class ShopProductController extends Controller
         ([
             'name' => 'required|max:255',
             'slug' => 'required',
+            'author_id' => 'required',
+            'view' => 'required',
             'images' => 'required',
-            'priceCore' => 'required|numeric',
-            'priceSale' => 'required|numeric',
-            'stock' => 'required',
             'intro' => 'required',
             'desc' => 'required',
+
         ]);
 
         $input = $request->all();
-        $item = new ShopProductModel();
+        $item = new ContentPostModel();
         $item ->name = $input['name'];
         $item ->slug = $input['slug'];
+        $item ->author_id = isset($input['author_id']) ? $input['author_id'] : 0;
+        $item ->view = isset($input['view']) ? $input['view'] : 0;
         $item ->images = $input['images'];
         $item ->intro = $input['intro'];
         $item ->desc = $input['desc'];
-        $item ->priceCore = $input['priceCore'];
-        $item ->priceSale = $input['priceSale'];
-        $item ->stock = $input['stock'];
         $item ->cat_id = $input['cat_id'];
 
         $item->save();
-        return redirect('admin/shop/product');
+        return redirect('admin/content/post');
     }
 
     public function update(Request $request, $id)
@@ -88,36 +89,34 @@ class ShopProductController extends Controller
             'name' => 'required|max:255',
             'slug' => 'required',
             'images' => 'required',
-            'priceCore' => 'required|numeric',
-            'priceSale' => 'required|numeric',
-            'stock' => 'required',
             'intro' => 'required',
             'desc' => 'required',
+            'author_id' => 'required',
+            'view' => 'required',
         ]);
 
         $input = $request->all();
-        $item = ShopProductModel::find($id);
+        $item = ContentPostModel::find($id);
         $item ->name = $input['name'];
         $item ->slug = $input['slug'];
+        $item ->author_id = isset($input['author_id']) ? $input['author_id'] : 0;
+        $item ->view = isset($input['view']) ? $input['view'] : 0;
         $item ->images = $input['images'];
         $item ->intro = $input['intro'];
         $item ->desc = $input['desc'];
-        $item ->priceCore = $input['priceCore'];
-        $item ->priceSale = $input['priceSale'];
-        $item ->stock = $input['stock'];
         $item ->cat_id = $input['cat_id'];
 
         $item->save();
-        return redirect('admin/shop/product');
+        return redirect('admin/content/post');
 
     }
 
     public function destroy($id)
     {
-        $item = ShopProductModel::find($id);
+        $item = ContentPostModel::find($id);
         $item->delete();
 
-        return redirect('admin/shop/product');
+        return redirect('admin/content/post');
 
     }
 }
