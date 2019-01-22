@@ -40,7 +40,8 @@
                 </div>
                 <div class="form-group">
                     <label for="txtarea1" class="col-sm-2 control-label">Intro</label>
-                    <div class="col-sm-8"><textarea name="intro" id="txtarea1" cols="50" rows="4" class="form-control1">{{$tag->intro}}</textarea></div>
+                    <div class="col-sm-8">
+                        <textarea name="intro" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{$tag->intro}}</textarea></div>
                 </div>
                 <div class="col-sm-offset-2">
                     <button type="submit" class="btn btn-success">Submit</button>

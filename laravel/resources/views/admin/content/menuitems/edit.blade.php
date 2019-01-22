@@ -16,12 +16,12 @@
                     </ul>
                 </div>
         @endif
-        <!-- Create menu Form -->
+        <!-- Create menuitems Form -->
 
-            <form name ="menu" action="{{ url('admin/menuitems/'. $menuitems->id) }}" method="post" class="form-horizontal">
+            <form name ="menuitems" action="{{ url('admin/menuitems/'. $menuitems->id) }}" method="post" class="form-horizontal">
                 @csrf
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Menu</label>
+                    <label for="focusedinput" class="col-sm-2 control-label">Menu Items</label>
                     <div class="col-sm-8">
                         <input type="text" name="name" class="form-control1" id="focusedinput" value="{{$menuitems->name}}" placeholder="Default Input">
                     </div>

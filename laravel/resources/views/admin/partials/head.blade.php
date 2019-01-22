@@ -90,6 +90,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     <!-- requried-jsfiles-for owl -->
     <link href="{{asset('admin_assets/css/owl.carousel.css')}}}" rel="stylesheet">
     <script src="{{asset('admin_assets/js/owl.carousel.js')}}"></script>
+    <script src="{{asset('admin_assets/tinymce/js/tinymce/tinymce.min.js')}}"></script>
     <script>
         $(document).ready(function() {
             $("#owl-demo").owlCarousel({
@@ -98,6 +99,18 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 autoPlay : true,
                 pagination : true,
                 nav:true,
+            });
+
+            tinymce.init({
+                selector: 'textarea.mytinymce',
+                theme:'modern',
+                height: '300',
+                plugins: [
+                    'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+                    'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+                    'save table contextmenu directionality emoticons template paste textcolor'
+                ],
+                toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
             });
         });
     </script>
