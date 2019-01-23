@@ -1,6 +1,6 @@
 @extends('admin.layouts.glance')
 @section('title')
-Trang quản trị viên
+ADMINISTRATOR
 @endsection
 @section('content')
             <div class="col_3">

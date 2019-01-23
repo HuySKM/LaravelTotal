@@ -27,6 +27,7 @@
      * ------------------- ROUTE ADMIN AUTHENCATION ------------------------
      * ---------------------------------------------------------------------
      */
+
     Route::get('admin','AdminController@index')->name('admin.dashboard');
 
 
@@ -124,6 +125,7 @@
     Route::get('shop/product/order', function () {
             return view('admin.content.shop.product-order.index');
     });
+
     /*Route::get('shop/product/order', 'Admin\ShopProductOrderController@index');
       Route::get('shop/product/order/create', 'Admin\ShopProductOrderController@create');
       Route::get('shop/product/order/{id}/edit', 'Admin\ShopProductOrderController@edit');
@@ -132,6 +134,7 @@
       Route::post('shop/product/order', 'Admin\ShopProductOrderController@store');
       Route::post('shop/product/order/{id}', 'Admin\ShopProductOrderController@update');
       Route::post('shop/product/order/{id}/delete', 'Admin\ShopProductOrderController@destroy');*/
+
     /**
     * ---------------------------------------------------------------------
     * ------------------- ROUTE ADMIN SHOPPING CUSTOMER -------------------
@@ -178,6 +181,7 @@
     Route::get('shop/review', function () {
             return view('admin.content.shop.review.index');
     });
+
     /*Route::get('shop/review', 'Admin\ShopReviewController@index');
     Route::get('shop/review/create', 'Admin\ShopReviewController@create');
     Route::get('shop/review/{id}/edit', 'Admin\ShopReviewController@edit');
@@ -196,6 +200,7 @@
     Route::get('shop/brand', function () {
             return view('admin.content.shop.brand.index');
     });
+
     /*Route::get('shop/brand', 'Admin\ShopBrandController@index');
     Route::get('shop/brand/create', 'Admin\ShopBrandController@create');
     Route::get('shop/brand/{id}/edit', 'Admin\ShopBrandController@edit');
@@ -214,6 +219,7 @@
     Route::get('shop/statistic', function () {
             return view('admin.content.shop.statistic.index');
     });
+
     /*Route::get('shop/statistic', 'Admin\ShopStatisticController@index');
     Route::get('shop/statistic/create', 'Admin\ShopStatisticController@create');
     Route::get('shop/statistic/{id}/edit', 'Admin\ShopStatisticController@edit');
