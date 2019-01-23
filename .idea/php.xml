@@ -90,6 +90,8 @@
       <path value="$PROJECT_DIR$/laravel/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/laravel/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/laravel/vendor/darryldecode/cart" />
+      <path value="$PROJECT_DIR$/laravel/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/laravel/vendor/unisharp/laravel-filemanager" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

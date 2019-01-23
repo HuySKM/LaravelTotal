@@ -116,34 +116,58 @@
     Route::post('shop/product/{id}/delete', 'Admin\ShopProductController@destroy');
 
     /**
+     * ---------------------------------------------------------------------
+     * ------------------- ROUTE ADMIN SHOPPING PRODUCT ORDER --------------
+     * ---------------------------------------------------------------------
+     */
+
+    Route::get('shop/product/order', function () {
+            return view('admin.content.shop.product-order.index');
+    });
+    /*Route::get('shop/product/order', 'Admin\ShopProductOrderController@index');
+      Route::get('shop/product/order/create', 'Admin\ShopProductOrderController@create');
+      Route::get('shop/product/order/{id}/edit', 'Admin\ShopProductOrderController@edit');
+      Route::get('shop/product/order/{id}/delete', 'Admin\ShopProductOrderController@delete');
+
+      Route::post('shop/product/order', 'Admin\ShopProductOrderController@store');
+      Route::post('shop/product/order/{id}', 'Admin\ShopProductOrderController@update');
+      Route::post('shop/product/order/{id}/delete', 'Admin\ShopProductOrderController@destroy');*/
+    /**
     * ---------------------------------------------------------------------
     * ------------------- ROUTE ADMIN SHOPPING CUSTOMER -------------------
     * ---------------------------------------------------------------------
     */
 
-    Route::get('shop/customer', 'Admin\ShopCustomerController@index');
+    Route::get('shop/customer', function () {
+            return view('admin.content.shop.customer.index');
+    });
+
+    /*Route::get('shop/customer', 'Admin\ShopCustomerController@index');
     Route::get('shop/customer/create', 'Admin\ShopCustomerController@create');
     Route::get('shop/customer/{id}/edit', 'Admin\ShopCustomerController@edit');
     Route::get('shop/customer/{id}/delete', 'Admin\ShopCustomerController@delete');
 
     Route::post('shop/customer', 'Admin\ShopCustomerController@store');
     Route::post('shop/customer/{id}', 'Admin\ShopCustomerController@update');
-    Route::post('shop/customer/{id}/delete', 'Admin\ShopCustomerController@destroy');
+    Route::post('shop/customer/{id}/delete', 'Admin\ShopCustomerController@destroy');*/
 
     /**
      * ---------------------------------------------------------------------
      * ------------------- ROUTE ADMIN SHOPPING ORDER ----------------------
      * ---------------------------------------------------------------------
      */
+    Route::get('shop/order', function () {
+            return view('admin.content.shop.order.index');
+    });
 
-    Route::get('shop/order', 'Admin\ShopOrderController@index');
+    /*Route::get('shop/order', 'Admin\ShopOrderController@index');
     Route::get('shop/order/create', 'Admin\ShopOrderController@create');
     Route::get('shop/order/{id}/edit', 'Admin\ShopOrderController@edit');
     Route::get('shop/order/{id}/delete', 'Admin\ShopOrderController@delete');
 
     Route::post('shop/order', 'Admin\ShopOrderController@store');
     Route::post('shop/order/{id}', 'Admin\ShopOrderController@update');
-    Route::post('shop/order/{id}/delete', 'Admin\ShopOrderController@destroy');
+    Route::post('shop/order/{id}/delete', 'Admin\ShopOrderController@destroy');*/
 
     /**
     * ---------------------------------------------------------------------
@@ -151,14 +175,17 @@
     * ---------------------------------------------------------------------
     */
 
-    Route::get('shop/review', 'Admin\ShopReviewController@index');
+    Route::get('shop/review', function () {
+            return view('admin.content.shop.review.index');
+    });
+    /*Route::get('shop/review', 'Admin\ShopReviewController@index');
     Route::get('shop/review/create', 'Admin\ShopReviewController@create');
     Route::get('shop/review/{id}/edit', 'Admin\ShopReviewController@edit');
     Route::get('shop/review/{id}/delete', 'Admin\ShopReviewController@delete');
 
     Route::post('shop/review', 'Admin\ShopReviewController@store');
     Route::post('shop/review/{id}', 'Admin\ShopReviewController@update');
-    Route::post('shop/review/{id}/delete', 'Admin\ShopReviewController@destroy');
+    Route::post('shop/review/{id}/delete', 'Admin\ShopReviewController@destroy');*/
 
     /**
     * ---------------------------------------------------------------------
@@ -166,14 +193,17 @@
     * ---------------------------------------------------------------------
     */
 
-    Route::get('shop/brand', 'Admin\ShopBrandController@index');
+    Route::get('shop/brand', function () {
+            return view('admin.content.shop.brand.index');
+    });
+    /*Route::get('shop/brand', 'Admin\ShopBrandController@index');
     Route::get('shop/brand/create', 'Admin\ShopBrandController@create');
     Route::get('shop/brand/{id}/edit', 'Admin\ShopBrandController@edit');
     Route::get('shop/brand/{id}/delete', 'Admin\ShopBrandController@delete');
 
     Route::post('shop/brand', 'Admin\ShopBrandController@store');
     Route::post('shop/brand/{id}', 'Admin\ShopBrandController@update');
-    Route::post('shop/brand/{id}/delete', 'Admin\ShopBrandController@destroy');
+    Route::post('shop/brand/{id}/delete', 'Admin\ShopBrandController@destroy');*/
 
     /**
     * ---------------------------------------------------------------------
@@ -181,29 +211,17 @@
     * ---------------------------------------------------------------------
     */
 
-    Route::get('shop/statistic', 'Admin\ShopStatisticController@index');
+    Route::get('shop/statistic', function () {
+            return view('admin.content.shop.statistic.index');
+    });
+    /*Route::get('shop/statistic', 'Admin\ShopStatisticController@index');
     Route::get('shop/statistic/create', 'Admin\ShopStatisticController@create');
     Route::get('shop/statistic/{id}/edit', 'Admin\ShopStatisticController@edit');
     Route::get('shop/statistic/{id}/delete', 'Admin\ShopStatisticController@delete');
 
     Route::post('shop/statistic', 'Admin\ShopStatisticController@store');
     Route::post('shop/statistic/{id}', 'Admin\ShopStatisticController@update');
-    Route::post('shop/statistic/{id}/delete', 'Admin\ShopStatisticController@destroy');
-
-    /**
-    * ---------------------------------------------------------------------
-    * ------------------- ROUTE ADMIN SHOPPING PRODUCT ORDER --------------
-    * ---------------------------------------------------------------------
-    */
-
-    Route::get('shop/product/order', 'Admin\ShopProductOrderController@index');
-    Route::get('shop/product/order/create', 'Admin\ShopProductOrderController@create');
-    Route::get('shop/product/order/{id}/edit', 'Admin\ShopProductOrderController@edit');
-    Route::get('shop/product/order/{id}/delete', 'Admin\ShopProductOrderController@delete');
-
-    Route::post('shop/product/order', 'Admin\ShopProductOrderController@store');
-    Route::post('shop/product/order/{id}', 'Admin\ShopProductOrderController@update');
-    Route::post('shop/product/order/{id}/delete', 'Admin\ShopProductOrderController@destroy');
+    Route::post('shop/statistic/{id}/delete', 'Admin\ShopStatisticController@destroy');*/
 
     /**
     * ---------------------------------------------------------------------
@@ -301,14 +319,17 @@
     * ---------------------------------------------------------------------
     */
 
-    Route::get('users', 'Admin\UserController@index');
+    Route::get('users', function () {
+            return view('admin.content.users.index');
+    });
+    /*Route::get('users', 'Admin\UserController@index');
     Route::get('users/create', 'Admin\UserController@create');
     Route::get('users/{id}/edit', 'Admin\UserController@edit');
     Route::get('users/{id}/delete', 'Admin\UserController@delete');
 
     Route::post('users', 'Admin\UserController@store');
     Route::post('users/{id}', 'Admin\UserController@update');
-    Route::post('users/{id}/delete', 'Admin\UserController@destroy');
+    Route::post('users/{id}/delete', 'Admin\UserController@destroy');*/
 
     /**
     * ---------------------------------------------------------------------
@@ -316,14 +337,17 @@
     * ---------------------------------------------------------------------
     */
 
-    Route::get('media', 'Admin\MediaController@index');
+    Route::get('media', function () {
+            return view('admin.content.media.index');
+    });
+    /*Route::get('media', 'Admin\MediaController@index');
     Route::get('media/create', 'Admin\MediaController@create');
     Route::get('media/{id}/edit', 'Admin\MediaController@edit');
     Route::get('media/{id}/delete', 'Admin\MediaController@delete');
 
     Route::post('media', 'Admin\MediaController@store');
     Route::post('media/{id}', 'Admin\MediaController@update');
-    Route::post('media/{id}/delete', 'Admin\MediaController@destroy');
+    Route::post('media/{id}/delete', 'Admin\MediaController@destroy');*/
 
     /**
      * ---------------------------------------------------------------------
@@ -340,14 +364,17 @@
      * ---------------------------------------------------------------------
      */
 
-    Route::get('newsletter', 'Admin\NewsLetterController@index');
+    Route::get('newsletter', function () {
+            return view('admin.content.newsletter.index');
+    });
+    /*Route::get('newsletter', 'Admin\NewsLetterController@index');
     Route::get('newsletter/create', 'Admin\NewsLetterController@create');
     Route::get('newsletter/{id}/edit', 'Admin\NewsLetterController@edit');
     Route::get('newsletter/{id}/delete', 'Admin\NewsLetterController@delete');
 
     Route::post('newsletter', 'Admin\NewsLetterController@store');
     Route::post('newsletter/{id}', 'Admin\NewsLetterController@update');
-    Route::post('newsletter/{id}/delete', 'Admin\NewsLetterController@destroy');
+    Route::post('newsletter/{id}/delete', 'Admin\NewsLetterController@destroy');*/
 
     /**
      * ---------------------------------------------------------------------
@@ -355,14 +382,17 @@
      * ---------------------------------------------------------------------
      */
 
-    Route::get('banners', 'Admin\BannerController@index');
+    Route::get('banner', function () {
+            return view('admin.content.banner.index');
+    });
+    /*Route::get('banners', 'Admin\BannerController@index');
     Route::get('banners/create', 'Admin\BannerController@create');
     Route::get('banners/{id}/edit', 'Admin\BannerController@edit');
     Route::get('banners/{id}/delete', 'Admin\BannerController@delete');
 
     Route::post('banners', 'Admin\BannerController@store');
     Route::post('banners/{id}', 'Admin\BannerController@update');
-    Route::post('banners/{id}/delete', 'Admin\BannerController@destroy');
+    Route::post('banners/{id}/delete', 'Admin\BannerController@destroy');*/
 
     /**
      * ---------------------------------------------------------------------
@@ -370,14 +400,17 @@
      * ---------------------------------------------------------------------
      */
 
-    Route::get('contacts', 'Admin\ContactController@index');
+    Route::get('contacts', function () {
+            return view('admin.content.contacts.index');
+    });
+    /*Route::get('contacts', 'Admin\ContactController@index');
     Route::get('contacts/create', 'Admin\ContactController@create');
     Route::get('contacts/{id}/edit', 'Admin\ContactController@edit');
     Route::get('contacts/{id}/delete', 'Admin\ContactController@delete');
 
     Route::post('contacts', 'Admin\ContactController@store');
     Route::post('contacts/{id}', 'Admin\ContactController@update');
-    Route::post('contacts/{id}/delete', 'Admin\ContactController@destroy');
+    Route::post('contacts/{id}/delete', 'Admin\ContactController@destroy');*/
 
     /**
      * ---------------------------------------------------------------------
@@ -385,14 +418,17 @@
      * ---------------------------------------------------------------------
      */
 
-    Route::get('email/inbox', 'Admin\EmailInboxController@index');
+    Route::get('email/inbox', function () {
+            return view('admin.content.email.inbox');
+    });
+    /*Route::get('email/inbox', 'Admin\EmailInboxController@index');
     Route::get('email/inbox/create', 'Admin\EmailInboxController@create');
     Route::get('email/inbox/{id}/edit', 'Admin\EmailInboxController@edit');
     Route::get('email/inbox/{id}/delete', 'Admin\EmailInboxController@delete');
 
     Route::post('email/inbox', 'Admin\EmailInboxController@store');
     Route::post('email/inbox/{id}', 'Admin\EmailInboxController@update');
-    Route::post('email/inbox/{id}/delete', 'Admin\EmailInboxController@destroy');
+    Route::post('email/inbox/{id}/delete', 'Admin\EmailInboxController@destroy');*/
 
     /**
      * ---------------------------------------------------------------------
@@ -400,14 +436,17 @@
      * ---------------------------------------------------------------------
      */
 
-    Route::get('email/draft', 'Admin\EmailDraftController@index');
+    Route::get('email/draft', function () {
+            return view('admin.content.email.draft');
+    });
+    /*Route::get('email/draft', 'Admin\EmailDraftController@index');
     Route::get('email/draft/create', 'Admin\EmailDraftController@create');
     Route::get('email/draft/{id}/edit', 'Admin\EmailDraftController@edit');
     Route::get('email/draft/{id}/delete', 'Admin\EmailDraftController@delete');
 
     Route::post('email/draft', 'Admin\EmailDraftController@store');
     Route::post('email/draft/{id}', 'Admin\EmailDraftController@update');
-    Route::post('email/draft/{id}/delete', 'Admin\EmailDraftController@destroy');
+    Route::post('email/draft/{id}/delete', 'Admin\EmailDraftController@destroy');*/
 
     /**
      * ---------------------------------------------------------------------
@@ -415,14 +454,17 @@
      * ---------------------------------------------------------------------
      */
 
-    Route::get('email/send', 'Admin\EmailSendController@index');
+    Route::get('email/send', function () {
+            return view('admin.content.email.send');
+    });
+    /*Route::get('email/send', 'Admin\EmailSendController@index');
     Route::get('email/send/create', 'Admin\EmailSendController@create');
     Route::get('email/send/{id}/edit', 'Admin\EmailSendController@edit');
     Route::get('email/send/{id}/delete', 'Admin\EmailSendController@delete');
 
     Route::post('email/send', 'Admin\EmailSendController@store');
     Route::post('email/send/{id}', 'Admin\EmailSendController@update');
-    Route::post('email/send/{id}/delete', 'Admin\EmailSendController@destroy');
+    Route::post('email/send/{id}/delete', 'Admin\EmailSendController@destroy');*/
 
     });
 
