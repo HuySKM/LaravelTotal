@@ -29,6 +29,8 @@
                             <li><a href="{{ url('/admin/shop/category') }}"><i class="fa fa-paper-plane"></i> Danh mục</a></li>
                             <li><a href="{{ url('/admin/shop/product') }}"><i class="fa fa-product-hunt"></i></i> Sản phẩm</a></li>
                             <li><a href="{{ url('/admin/shop/customer') }}"><i class="fa fa-user"></i> Khách hàng</a></li>
+                            <li><a href="{{ url('/admin/shop/shipper') }}"><i class="fa fa-truck"></i> Nhà vận chuyển</a></li>
+                            <li><a href="{{ url('/admin/shop/seller') }}"><i class="fa fa-buysellads"></i> Nhà cung cấp</a></li>
                             <li><a href="{{ url('/admin/shop/order') }}"><i class="fa fa-cart-arrow-down"></i> Đơn hàng</a></li>
                             <li><a href="{{ url('/admin/shop/review') }}"><i class="fa fa-star"></i> Đánh giá</a></li>
                             <li><a href="{{ url('/admin/shop/brand') }}"><i class="fa fa-thumbs-up"></i> Nhãn hiệu</a></li>
