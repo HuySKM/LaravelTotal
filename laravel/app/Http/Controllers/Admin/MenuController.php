@@ -9,6 +9,20 @@ use Illuminate\Support\Facades\DB;
 
 class MenuController extends Controller
 {
+    /**
+     * Hàm khởi tạo của Class được chạy ngay khi khởi tạo đối tượng
+     * Hàm này nó luôn được chạy trước các hàm khác trong Class
+     * AdminController Constructor
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+
+        $locations = MenuModel::getMenuLocations();
+
+        view()->share('locations', $locations);
+    }
+
     public function index()
     {
         $items = DB::table('menus')->paginate(10);
@@ -81,7 +95,7 @@ class MenuController extends Controller
         ]);
 
         $input = $request->all();
-        $item = new MenuModel();
+        $item = MenuModel::find($id);
         $item ->name = $input['name'];
         $item ->slug = $input['slug'];
         $item ->desc = $input['desc'];

@@ -43,11 +43,29 @@
                         <input type="text" name="slug" value="{{ old('slug') }}" class="form-control1" id="focusedinput" placeholder="Default Input">
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Images</label>
                     <div class="col-sm-8">
-                        <input type="text" name="images" value="{{ old('images') }}" class="form-control1" id="focusedinput" placeholder="Default Input">
+                        <span class="input-group-btn">
+                         <a id="lfm" data-input="thumbnail" data-preview="holder" class="lfm-btn btn btn-primary">
+                           <i class="fa fa-picture-o"></i> Choose
+                         </a>
+                            <a class="btn btn-warning remove-image">
+                           <i class="fa fa-remove"></i> Delete
+                         </a>
+                       </span>
+                        <input id="thumbnail" type="text" name="images[]" value="{{ old('images') }}" class="form-control" id="focusedinput" placeholder="Default Input">
+                        <img id="holder" style="margin-top:15px;max-height:100px;">
                     </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Add Images</label>
+                    <div class="col-sm-8">
+                        <a id="plus-image" class="btn btn-success">
+                            <i class="fa fa-plus"></i> Add New
+                        </a></div>
                 </div>
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Price</label>
@@ -84,4 +102,68 @@
             </form>
         </div>
     </div>
+    <script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.lfm-btn').filemanager('image', {'prefix':'http://localhost/LaravelTotal/laravel/public/laravel-filemanager'});
+
+
+            $('#plus-image').on('click', function (e) {
+                e.preventDefault();
+
+                var lfm_count = parseInt($('.lfm-btn').length);
+                var next = lfm_count+1;
+
+                var html = '';
+
+                for(var i = 0; i < 1000; i++){
+
+                    if ($('#lfm'+next).length < 1) {
+
+                        html += '<div class="form-group">\n' +
+                            '                    <label for="focusedinput" class="col-sm-2 control-label">Images</label>\n' +
+                            '                    <div class="col-sm-8">\n' +
+                            '                        <span class="input-group-btn">\n' +
+                            '                         <a id="lfm'+next+'" data-input="thumbnail'+next+'" data-preview="holder'+next+'" class="lfm-btn btn btn-primary">\n' +
+                            '                           <i class="fa fa-picture-o"></i> Choose\n' +
+                            '                         </a>\n' +
+                            '                            <a class="btn btn-warning remove-image">\n' +
+                            '                           <i class="fa fa-remove"></i> Delete\n' +
+                            '                         </a>\n' +
+                            '                       </span>\n' +
+                            '                        <input id="thumbnail'+next+'" type="text" name="images[]" value="" class="form-control1" id="focusedinput" placeholder="Default Input">\n' +
+                            '                        <img id="holder'+next+'" style="margin-top:15px;max-height:100px;">\n' +
+                            '                    </div>\n' +
+                            '                </div>';
+
+
+                        break;
+                    } else {
+                        next++;
+                    }
+
+
+                }
+
+                var box = $(this).closest('.form-group');
+
+                $( html ).insertBefore( box );
+
+                $('.lfm-btn').filemanager('image', {'prefix':'http://localhost/LaravelTotal/laravel/public/laravel-filemanager'});
+
+            });
+
+
+            $(body).on('click', '.remove-image', function (e) {
+                e.preventDefault();
+
+                $(this).closest('.form-group').remove();
+
+            });
+
+
+        });
+
+    </script>
+
 @endsection

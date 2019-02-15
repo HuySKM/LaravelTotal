@@ -16,7 +16,7 @@
                     <th>#</th>
                     <th>Name</th>
                     <th>Category</th>
-                    <th>Images</th>
+                    <th style="width: 150px">Images</th>
                     <th>Price</th>
                     <th>Sale</th>
                     <th>Stock</th>
@@ -29,7 +29,19 @@
                         <th scope="row">{{$product->id}}</th>
                         <td>{{$product->name}}</td>
                         <td>{{$product->cat_id}}</td>
-                        <td>{{$product->images}}</td>
+
+                        <td>
+                            <?php
+                                $images = isset($product->images) ? json_decode($product->images) : array();
+                            ?>
+
+                            @if(!empty($images))
+                                @foreach($images as $image)
+                                            <img  src="{{ asset($image) }}" style="margin-top:15px;max-height:100px;">
+                                @endforeach
+                            @endif
+                        </td>
+
                         <td>{{$product->priceCore}}</td>
                         <td>{{$product->priceSale}}</td>
                         <td>{{$product->stock}}</td>

@@ -10,6 +10,16 @@ use Illuminate\Support\Facades\DB;
 
 class ShopProductController extends Controller
 {
+    /**
+     * Hàm khởi tạo của Class được chạy ngay khi khởi tạo đối tượng
+     * Hàm này nó luôn được chạy trước các hàm khác trong Class
+     * AdminController Constructor
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     public function index()
     {
         $items = DB::table('shop_products')->paginate(10);
@@ -70,7 +80,7 @@ class ShopProductController extends Controller
         $item = new ShopProductModel();
         $item ->name = $input['name'];
         $item ->slug = $input['slug'];
-        $item ->images = $input['images'];
+        $item ->images = isset($input['images']) ? json_encode($input['images']) : '';
         $item ->intro = $input['intro'];
         $item ->desc = $input['desc'];
         $item ->priceCore = $input['priceCore'];
@@ -99,7 +109,7 @@ class ShopProductController extends Controller
         $item = ShopProductModel::find($id);
         $item ->name = $input['name'];
         $item ->slug = $input['slug'];
-        $item ->images = $input['images'];
+        $item ->images = isset($input['images']) ? json_encode($input['images']) : '';
         $item ->intro = $input['intro'];
         $item ->desc = $input['desc'];
         $item ->priceCore = $input['priceCore'];

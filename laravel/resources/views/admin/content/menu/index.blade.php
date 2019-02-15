@@ -24,7 +24,11 @@
                     <tr>
                         <th scope="row">{{$menu->id}}</th>
                         <td>{{$menu->name}}</td>
-                        <td>{{$menu->location}}</td>
+                        <td>
+                            @if(isset($locations[$menu->location]))
+                            {{ $locations[$menu->location] }}
+                            @endif
+                        </td>
                         <td>
                             <a href="{{ url('admin/menu/create') }}" class="btn btn-success">Add</a>
                             <a href="{{ url('admin/menu/'. $menu->id.'/edit') }}" class="btn btn-warning">Edit</a>

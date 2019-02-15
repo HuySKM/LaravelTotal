@@ -15,7 +15,7 @@
                 <ul class="sidebar-menu">
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="treeview">
-                        <a href="{{url('/admin/')}}">
+                        <a href="{{ url('/admin/')}}">
                             <i class="fa fa-home"></i> <span>Dashboard</span>
                         </a>
                     </li>
@@ -28,7 +28,7 @@
                         <ul class="treeview-menu">
                             <li><a href="{{ url('/admin/shop/category') }}"><i class="fa fa-paper-plane"></i> Danh mục</a></li>
                             <li><a href="{{ url('/admin/shop/product') }}"><i class="fa fa-product-hunt"></i></i> Sản phẩm</a></li>
-                            <li><a href="{{ url('/admin/shop/customer') }}"><i class="fa fa-user"></i> Khách hàng</a></li>
+                            <li><a href="{{ url('/admin/shop/customer') }}"><i class="fa fa-users"></i> Khách hàng</a></li>
                             <li><a href="{{ url('/admin/shop/shipper') }}"><i class="fa fa-truck"></i> Nhà vận chuyển</a></li>
                             <li><a href="{{ url('/admin/shop/seller') }}"><i class="fa fa-buysellads"></i> Nhà cung cấp</a></li>
                             <li><a href="{{ url('/admin/shop/order') }}"><i class="fa fa-cart-arrow-down"></i> Đơn hàng</a></li>
@@ -51,7 +51,7 @@
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-comment"></i>
+                            <i class="fa fa-comments"></i>
                             <span>Content</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
@@ -131,7 +131,7 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/contacts') }}"><i class="fa fa-phone"></i> Contacts</a></li>
+                            <li><a href="{{ url('/admin/contacts') }}"><i class="fa fa-phone-square"></i> Contacts</a></li>
                         </ul>
                     </li>
                     <li class="treeview">

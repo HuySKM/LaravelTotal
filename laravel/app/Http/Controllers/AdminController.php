@@ -31,7 +31,8 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.auth.register');
+        //return view('admin.auth.register');
+        return view('admin.auth.registertemplate');
 
     }
 

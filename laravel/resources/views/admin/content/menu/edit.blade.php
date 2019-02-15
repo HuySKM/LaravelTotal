@@ -33,6 +33,18 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Locations</label>
+                    <div class="col-sm-8">
+                        <select name="location">
+                            <option value="0">None</option>
+                            @foreach($locations as $key_local => $location)
+                                <?php  $selected = ($key_local == $menu->location) ? 'selected' : ''?>
+                                <option value="{{ $key_local }}" {{ $selected }}>{{ $location }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="txtarea1" class="col-sm-2 control-label">Description</label>
                     <div class="col-sm-8">
                         <textarea name="desc" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{$menu->desc}}</textarea></div>

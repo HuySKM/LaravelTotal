@@ -6,6 +6,11 @@
     <h1>Quản lý Users</h1>
     <div style="margin: 20px 0">
         <a href="{{ url('admin/users/create') }}" class="btn btn-success">Thêm Admins</a>
+        @if (Route::has('admin.register'))
+
+                <a class="btn btn-success" href="{{ route('admin.register') }}">{{ __('Register') }}</a>
+
+        @endif
     </div>
     <div class="tables">
         <div class="table-responsive bs-example widget-shadow">
